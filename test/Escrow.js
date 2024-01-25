@@ -149,8 +149,12 @@ describe('Escrow', () => {
 
         })
 
-        it('works', async() => {
-            
+        it('Updates balance', async() => {
+            expect(await escrow.getBalance()).to.be.equal(0)
+        })
+
+        it('Updates ownership', async() => {
+            expect(await realEstate.ownerOf(1)).to.be.equal(buyer.address)
         })
     })
 
